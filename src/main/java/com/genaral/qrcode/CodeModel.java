@@ -1,4 +1,4 @@
-package com.genaral.qrcode.twoDimensionCode;
+package com.genaral.qrcode;
 
 import java.io.File;
 

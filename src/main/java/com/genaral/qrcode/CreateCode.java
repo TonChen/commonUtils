@@ -1,4 +1,4 @@
-package com.genaral.qrcode.twoDimensionCode;
+package com.genaral.qrcode;
 
 import com.genaral.object.ObjectUtil;
 import com.google.zxing.BarcodeFormat;
