@@ -4,14 +4,12 @@
 package com.genaral.excel;
 
 import com.alibaba.fastjson.JSONObject;
-import com.cfth.core.opencsv.CSVReader;
-import com.cfth.core.util.DateConvertUtils;
+import com.genaral.date.DateConvertUtils;
 import com.genaral.excel.bean.DataCell;
 import com.genaral.excel.bean.DataRecord;
 import com.genaral.excel.bean.DataRow;
-import javacommon.util.Excel2007Utils;
-import javacommon.util.UUIDLong;
-import javafx.scene.image.WritableImage;
+import com.genaral.opencsv.CSVReader;
+import com.genaral.sequence.RandomUtil;
 import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
@@ -20,12 +18,14 @@ import jxl.format.Alignment;
 import jxl.format.Colour;
 import jxl.format.UnderlineStyle;
 import jxl.format.VerticalAlignment;
+import jxl.write.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.lang.Boolean;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -182,7 +182,7 @@ public class ExcelUtil {
 	
 	/**
 	 * 导入文件csv格式<br>
-	 * @param InputStream 文件流
+	 * @param in 文件流
 	 * @return DataRecord
 	 * @throws Exception
 	 */
@@ -343,7 +343,7 @@ public class ExcelUtil {
 		if(!file.exists()){
 			file.mkdir();
 		}
-		path = path + File.separator + UUIDLong.longUUID()+".xls";
+		path = path + File.separator + RandomUtil.randomNum(10)+".xls";
 		FileOutputStream out = new FileOutputStream(new File(path));
         exportAsExcel(out, dataRecord);
         
@@ -568,7 +568,7 @@ public class ExcelUtil {
 	
 	/**
 	 * 下载网络图片
-	 * @param url
+	 * @param imgUrl
 	 * @return
 	 */
 	public static String dowlodInternetImg(String imgUrl){
@@ -580,7 +580,7 @@ public class ExcelUtil {
 		if(!file.exists()){
 			file.mkdir();
 		}
-		path = path + File.separator + UUIDLong.longUUID()+".png";
+		path = path + File.separator + RandomUtil.randomNum(10)+".png";
 		try {
 			URL url = new URL(imgUrl);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -644,7 +644,7 @@ public class ExcelUtil {
 	
 	/**
 	 * 导入文件excel格式<br>
-	 * @param InputStream 文件输入流
+	 * @param in 文件输入流
 	 * @return DataRecord
 	 * @throws Exception
 	 */
@@ -676,7 +676,7 @@ public class ExcelUtil {
 	
 	/**
 	 * 导入文件excel格式<br>
-	 * @param InputStream 文件输入流
+	 * @param in 文件输入流
 	 * @return DataRecord
 	 * @throws Exception
 	 */

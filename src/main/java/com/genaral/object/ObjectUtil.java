@@ -84,6 +84,19 @@ public class ObjectUtil {
     }
 
 
+    /**
+     * 判断是否是正确的数字,长度不能超过11位
+     *
+     * @param num
+     * @return
+     */
+    public static boolean isNumber(String num) {
+        if (isNullOrEmptyString(num)) return false;
+        Pattern p = Pattern.compile("^-?[0-9]{1,11}$");
+        Matcher m = p.matcher(num);
+        return m.matches();
+    }
+
 
     /**
      * 对应敏感数字的遮掩处理,处理中间字符

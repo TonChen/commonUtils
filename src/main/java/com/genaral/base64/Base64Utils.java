@@ -1,4 +1,4 @@
-package com.genaral.base;
+package com.genaral.base64;
 
 import org.apache.commons.codec.binary.Base64;
 

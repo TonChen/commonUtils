@@ -1,4 +1,4 @@
-package com.genaral.base;
+package com.genaral.base64;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;

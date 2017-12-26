@@ -1,26 +1,23 @@
 package com.genaral.excel;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
-import java.util.List;
-
-import com.cfth.core.util.DateConvertUtils;
-
+import com.genaral.date.DateConvertUtils;
+import com.genaral.excel.bean.DataCell;
+import com.genaral.excel.bean.DataRecord;
+import com.genaral.excel.bean.DataRow;
 import jxl.Workbook;
 import jxl.biff.DisplayFormat;
 import jxl.format.Alignment;
 import jxl.format.Colour;
 import jxl.format.UnderlineStyle;
 import jxl.format.VerticalAlignment;
-import jxl.write.Label;
-import jxl.write.NumberFormats;
-import jxl.write.WritableCellFormat;
-import jxl.write.WritableFont;
-import jxl.write.WritableImage;
-import jxl.write.WritableSheet;
-import jxl.write.WritableWorkbook;
+import jxl.write.*;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.lang.Boolean;
+import java.util.List;
 
 /**
  * EXCEL工具类扩展,excel列合并...
